@@ -5,6 +5,9 @@
 // rootElement.appendChild(heading);
 
 // With react
+
+// Template:
+// React.createElement(tagName, attributes(this is a javascript object), children(this can be a single string of list of elements))
 const heading1 = React.createElement("h1", {
     id: "h1tag",
     className: "header"
