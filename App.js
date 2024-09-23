@@ -14,9 +14,10 @@ import ReactDOM from 'react-dom/client';
 
 const heading1 = React.createElement("h1", {
     id: "h1tag",
-    className: "header"
+    className: "header",
+    key: "123"
 },"Heading 1"); // This is an react object with props(the 2nd param, and remaining params are children), key, type(=h1)
-const heading2 = React.createElement("h2", {}, "Heading 2");
+const heading2 = React.createElement("h2", {key: "124"}, "Heading 2");
 const innerElements = React.createElement("div", {id: "container"}, [heading1, heading2]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
