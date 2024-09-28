@@ -571,7 +571,7 @@ const Body = () => {
             {
                 restaurantList.map(restaurant => {
                     return (
-                        <RestaurantCard {...restaurant.info}/>
+                        <RestaurantCard {...restaurant.info}  key={restaurant.info.id}/>
                     )
                 })
             }
