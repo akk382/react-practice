@@ -1,29 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import logo from './images/logo.jpeg'; // Add a logo.jpeg of your choice
 
-// Designing Layout of the app
-    /**
-     * Header
-     *  - Logo
-     *  - Nav Items (right)
-     *  - Cart
-     * Body
-     *  - Search Bar
-     *  - Restaurant List
-     *      - Restaurant Card
-     *          - Image
-     *          - Name
-     *          - Rating
-     *          - Tags
-     *          - Cusines
-     * Footer
-     *  - Links
-     *  - Copyright
-     */
+export const IMG_CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 
 // Config Driven UI
-const restaurantList = [
+export const restaurantList = [
     {
         "info": {
             "id": "547141",
@@ -1380,69 +1359,3 @@ const restaurantList = [
         "widgetId": "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo"
     }
 ]
-
-const RestaurantCard = ({name, cloudinaryImageId, cuisines, avgRating}) => {
-    return (
-        <div className='card'>
-            <img alt='' src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" + cloudinaryImageId} />
-            <h3>{name}</h3>
-            <h5>{cuisines.join(', ')}</h5>
-            <h4>{avgRating} Stars</h4>
-        </div>
-    );
-}
-
-const Header = () => {
-    return (
-        <div className='header'>
-            <a href='/'>
-                <img alt='App Logo' src={logo} className='logo'/>
-            </a>
-             <ul className='nav-items'>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Cart</li>
-            </ul>
-        </div>
-    );
-}
-
-const Body = () => {
-    return (
-        <div className='restaurant-list'>
-            {
-                restaurantList.map(restaurant => {
-                    return (
-                        <RestaurantCard {...restaurant.info}  key={restaurant.info.id}/> // Added key to make reconcialiation diffing algorithm happy and remove error(react complaining) in console logs. The reconciliation diffing algorithm is being replaced by react fiber.
-                        // no key(not acceptable) <<<<<<<<<< index key(last option) <<< unique key(best practices)
-                    )
-                })
-            }
-        </div>
-    );
-
-}
-
-const Footer = () => {
-    return (
-        <>
-            <h3>Footer</h3>
-        </>
-    );
-}
-
-const AppLayout = () => {
-
-    return (
-        <React.Fragment>
-            <Header />
-            <Body />
-            <Footer />
-        </React.Fragment>
-    );
-}
-
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);

@@ -1,3 +1,8 @@
+/* body {
+    background-color: hsla(0, 2%, 9%, 0.8);
+    color: white;
+} */
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -22,7 +27,6 @@ ul.nav-items > li {
 
 .card {
     width: 200px;
-    height: 380px;
     border: 1px solid black;
     margin: 10px;
     padding: 10px;
@@ -38,7 +42,32 @@ ul.nav-items > li {
     border-radius: 20px;
 }
 
+/* This removed the spacing between text */
+.card img, .card h3, .card h4, .card h5 {
+    margin: 0;
+    padding: 0;
+}
+
 .restaurant-list {
     display: flex;
     flex-wrap: wrap
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+}
+
+.search-input {
+    border-radius: 8px;
+    border: 5px solid hsla(0, 0%, 100%, 0.76);
+    width: 500px;
+}
+
+.search-container > button {
+    border-radius: 5px;
+    border: 5px solid hsla(180, 100%, 50%, 0.459);
+    background-color: hsla(180, 100%, 50%, 0.459);
+    margin-left: 10px;
 }
