@@ -40,6 +40,7 @@ ul.nav-items > li {
     height: 180px;
     border: none;
     border-radius: 20px;
+    object-fit: cover; /* Doesn't distort the image in the container with width and height */
 }
 
 /* This removed the spacing between text */
