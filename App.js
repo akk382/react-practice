@@ -21,7 +21,7 @@ import logo from './images/logo.jpeg'; // Add a logo.jpeg of your choice
      *  - Copyright
      */
 
-const HeaderComponent = () => {
+const Header = () => {
     return (
         <div className='header'>
             <a href='/'>
@@ -52,7 +52,7 @@ const AppLayout = () => {
 
     return (
         <React.Fragment>
-            <HeaderComponent />
+            <Header />
             <Body />
             <Footer />
         </React.Fragment>
