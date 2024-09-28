@@ -13,7 +13,7 @@ const Body = () => {
             return;
         }
         setRestaurantLst(
-            restaurantLst.filter(
+            restaurantList.filter(
                 restaurant => restaurant.info.name.toLowerCase()
                     .includes(searctText.toLowerCase())));
     }

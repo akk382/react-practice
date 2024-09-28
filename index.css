@@ -48,6 +48,10 @@ ul.nav-items > li {
     padding: 0;
 }
 
+.card h5 {
+    font-weight: normal;
+}
+
 .restaurant-list {
     display: flex;
     flex-wrap: wrap
