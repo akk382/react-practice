@@ -1,4 +1,21 @@
-#container {
-    background-color: cyan;
-    color: black;
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+    /* border: 1px solid black; */
+}
+
+ul.nav-items {
+    list-style-type: none;
+    display: flex;
+    padding: 1px;
+}
+
+ul.nav-items > li {
+    padding: 10px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
 }

@@ -1,26 +1,64 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import logo from './images/logo.jpeg'; // Add a logo.jpeg of your choice
 
-// // Without react
-// const heading = document.createElement("h1");
-// heading.innerHTML = "Hello World!";
-// const rootElement = document.getElementById('root');
-// rootElement.appendChild(heading);
+// Designing Layout of the app
+    /**
+     * Header
+     *  - Logo
+     *  - Nav Items (right)
+     *  - Cart
+     * Body
+     *  - Search Bar
+     *  - Restaurant List
+     *      - Restaurant Card
+     *          - Image
+     *          - Rating
+     *          - Tags
+     *          - Cusines
+     * Footer
+     *  - Links
+     *  - Copyright
+     */
 
-// With react
+const HeaderComponent = () => {
+    return (
+        <div className='header'>
+            <a href='/'>
+                <img alt='App Logo' src={logo} className='logo'/>
+            </a>
+             <ul className='nav-items'>
+                <li>Home</li>
+                <li>About</li>
+                <li>Contact</li>
+                <li>Cart</li>
+            </ul>
+        </div>
+    );
+}
 
-// Template:
-// React.createElement(tagName, attributes(this is a javascript object), children(this can be a single string of list of elements))
+const Body = () => {
+    return (
+        <h4></h4>
+    );
 
-const heading1 = React.createElement("h1", {
-    id: "h1tag",
-    className: "header",
-    key: "123"
-},"Heading 1"); // This is an react object with props(the 2nd param, and remaining params are children), key, type(=h1)
-const heading2 = React.createElement("h2", {key: "124"}, "Heading 2");
-const innerElements = React.createElement("div", {id: "container"}, [heading1, heading2]);
+}
+
+const Footer = () => {
+
+}
+
+const AppLayout = () => {
+
+    return (
+        <React.Fragment>
+            <HeaderComponent />
+            <Body />
+            <Footer />
+        </React.Fragment>
+    )
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(innerElements); // This only uses #root element above, since we only selected the root element. It doesn't modify other tags. 
-
+root.render(<AppLayout />);
