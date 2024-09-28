@@ -571,7 +571,7 @@ const Body = () => {
             {
                 restaurantList.map(restaurant => {
                     return (
-                        <RestaurantCard {...restaurant.info}  key={restaurant.info.id}/>
+                        <RestaurantCard {...restaurant.info}  key={restaurant.info.id}/> // Added key to make reconcialiation diffing algorithm happy and remove error(react complaining) in console logs. The reconciliation diffing algorithm is being replaced by react fiber.
                     )
                 })
             }
