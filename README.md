@@ -38,3 +38,15 @@ You can also use destructuring syntax to access multiple properties at once.
 ```let {NODE_ENV, API_TOKEN} = process.env;```
 
 Accessing process.env in any non-static ways (e.g. dynamic property lookups) is not supported.
+
+useEffect hook gets invoked after the rendering.
+
+We cannot use useEffect/useState inside if-else, for, while blocks. Using it makes react inconsistent.
+
+ShimmerUI is used to provide better user experience. This can be achieved with just css, without any external modules.
+
+Babel is a compiler, polyfill helps run the new features in old browsers(which doesn't support new features yet.
+
+We can only execute expressions inside the '{}' in js react components. We cannot use statements.
+
+React before V16 uses stacking reconciliation algorithm, which is ineffective(making frames drop and animation inconsistent), and from React 16 onwards, it is replaced by React Fiber, which also uses reconciliation algorithm, but uses React Fiber as datastructure.

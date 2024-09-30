@@ -7,7 +7,8 @@
     display: flex;
     justify-content: space-between;
     margin: 10px;
-    /* border: 1px solid black; */
+    align-content: center;
+    align-items: center;    /* To align items inside a dive horizontally*/
 }
 
 ul.nav-items {
@@ -27,8 +28,7 @@ ul.nav-items > li {
 }
 
 .card {
-    width: 200px;
-    border: 1px solid black;
+    width: 180px;
     margin: 10px;
     padding: 10px;
     border: none;
@@ -37,8 +37,8 @@ ul.nav-items > li {
 }
 
 .card > img {
-    width: 100%;
-    height: 180px;
+    width: 100%; /* Uses parent div(above css element) width as base */
+    height: 180px;  /* Using the same as parent div(above css element) height as base */
     border: none;
     border-radius: 20px;
     object-fit: cover; /* Doesn't distort the image in the container with width and height */
@@ -66,14 +66,42 @@ ul.nav-items > li {
 }
 
 .search-input {
-    border-radius: 8px;
-    border: 5px solid hsla(0, 0%, 100%, 0.76);
+    border-radius: 30px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border: none; /*5px solid hsla(0, 0%, 100%, 0.80);*/
     width: 500px;
+    background-color: hsla(186, 17%, 89%, 0.664);
+    text-align: center;
 }
 
 .search-container > button {
-    border-radius: 5px;
-    border: 5px solid hsla(180, 100%, 50%, 0.459);
-    background-color: hsla(180, 100%, 50%, 0.459);
-    margin-left: 10px;
+    width: 80px;
+    border-radius: 30px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border: none; /* 5px solid hsla(180, 100%, 50%, 0.459); */
+    background-color: hsla(180, 100%, 50%, 0.664);
+    text-align: center;
+    cursor: pointer;
+}
+
+.login-button {
+    width: 60px;
+    height: 50px;
+    background-color: hsla(180, 100%, 50%, 0.664);
+    border: none;
+    border-radius: 10px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.shimmer-ui {
+    width: 180px;
+    height: 180px;
+    background-color: hsl(0, 9%, 79%);
+    border-radius: 20px;
+    border: none;
+    margin: 20px;
+    padding: 10px;
 }

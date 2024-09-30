@@ -1,6 +1,13 @@
+import { useState } from "react";
 import Title from "./Title";
 
 const Header = () => {
+    const [authenticated, setAuthenticated] = useState(false);
+
+    const handleLogin = () => {
+        setAuthenticated(authenticated => !authenticated);
+    }
+
     return (
         <div className='header'>
             <Title />
@@ -10,6 +17,7 @@ const Header = () => {
                 <li>Contact</li>
                 <li>Cart</li>
             </ul>
+            <button className="login-button" onClick={handleLogin}>{authenticated ? 'Logout' : 'Login'}</button>
         </div>
     );
 }
