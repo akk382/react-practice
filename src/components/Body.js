@@ -17,7 +17,7 @@ const Body = () => {
             .then(cards => cards.filter(card => card.card.card.id === "restaurant_grid_listing"))
             .then(cards => {
                 setRestaurantLst(cards[0].card.card.gridElements.infoWithStyle.restaurants);
-                setFetchedRestaurants(cards[0].card.card.gridElements.infoWithStyle.restaurants)
+                setFetchedRestaurants(cards[0].card.card.gridElements.infoWithStyle.restaurants);
             })
             .catch(err => console.error(err));
     }
@@ -32,6 +32,13 @@ const Body = () => {
             fetchedRestaurants.filter(
                 restaurant => restaurant.info.name.toLowerCase()
                     .includes(searchText.toLowerCase())));
+        setSearchText("");
+    }
+
+    const searchOnEnter = (e) => {
+        if (e.code === 'Enter') {
+            filterResults(e.target.value);
+        }
     }
 
     return (
@@ -39,9 +46,10 @@ const Body = () => {
             <div className="search-container">
                 <input 
                     type="text" 
-                    placeholder="Search any keywords" 
+                    placeholder="Search for any keywords" 
                     className="search-input"
                     value={searchText}
+                    onKeyUp={(e) => {searchOnEnter(e)}}
                     onChange={(e) => {setSearchText(e.target.value)}} 
                 />
                 <button 

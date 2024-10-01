@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Title from "./Title";
+import { Link } from "react-router-dom";
 
 const Header = () => {
     const [authenticated, setAuthenticated] = useState(false);
@@ -12,10 +13,10 @@ const Header = () => {
         <div className='header'>
             <Title />
              <ul className='nav-items'>
-                <li>Home</li>
-                <li>About</li>
-                <li>Contact</li>
-                <li>Cart</li>
+                <li><Link to='/'>Home</Link></li>
+                <li><Link to='/about'>About</Link></li>
+                <li><Link to='/contact'>Contact</Link></li>
+                <li><Link to='/cart'>Cart</Link></li>
             </ul>
             <button className="login-button" onClick={handleLogin}>{authenticated ? 'Logout' : 'Login'}</button>
         </div>

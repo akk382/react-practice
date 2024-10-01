@@ -1,10 +1,9 @@
+import { Link } from 'react-router-dom';
 import logo from '../images/logo.jpeg'; // Add a logo.jpeg of your choice
 
 const Title = () => {
     return (
-        <a href='/'>
-            <img alt='App Logo' src={logo} className='logo'/>
-        </a>
+        <Link to='/'><img alt='App Logo' src={logo} className='logo'/></Link>
     );
 }
 

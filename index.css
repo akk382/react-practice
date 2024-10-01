@@ -21,6 +21,11 @@ ul.nav-items > li {
     padding: 10px;
 }
 
+.nav-items a {
+    text-decoration: none;
+    color: black;
+} 
+
 .logo {
     width: 80px;
     height: 80px;
@@ -75,6 +80,10 @@ ul.nav-items > li {
     text-align: center;
 }
 
+.search-input:focus {
+    outline: 0; /* This is added to remove outline border when we select input text(search box) element in ui */
+}
+
 .search-container > button {
     width: 80px;
     border-radius: 30px;
@@ -84,6 +93,10 @@ ul.nav-items > li {
     background-color: hsla(180, 100%, 50%, 0.664);
     text-align: center;
     cursor: pointer;
+}
+
+.search-container > button:hover, .login-button:hover {
+    background-color: hsl(172, 100%, 50%);
 }
 
 .login-button {
