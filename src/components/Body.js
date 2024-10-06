@@ -42,7 +42,8 @@ const Body = () => {
     }
 
     return (
-        <React.Fragment>
+        // <React.Fragment>
+        <div className="main-body">
             <div className="search-container">
                 <input 
                     type="text" 
@@ -63,14 +64,15 @@ const Body = () => {
                     restaurantLst.length == 0 ? <ShimmerUI /> :
                     restaurantLst.map(restaurant => {
                         return (
-                            <RestaurantCard {...restaurant.info}  key={restaurant.info.id}/> 
+                            <RestaurantCard {...restaurant.info} menuLink={restaurant.cta.link}  key={restaurant.info.id}/> 
                             // Added key to make reconcialiation diffing algorithm happy and remove error(react complaining) in console logs. The reconciliation diffing algorithm is being replaced by react fiber.
                             // no key(not acceptable) <<<<<<<<<< index key(last option) <<< unique key(best practices)
                         )
                     })
                 }
             </div>
-        </React.Fragment>
+        </div>
+        // </React.Fragment>
     );
 }
 

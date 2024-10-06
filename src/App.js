@@ -7,7 +7,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import About from './components/navbar/About';
 import Contact from './components/navbar/Contact';
 import Cart from './components/navbar/Cart';
-import Login from './components/navbar/Login';
+import Login from './components/Login';
 import Error from './components/errors/Error';
 
 
